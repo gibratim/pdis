@@ -1,0 +1,118 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="PDIS.detect"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Landscape"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--Phone Screen-->
+    <Grid x:Name="LayoutRoot" Margin="0,15">
+        <!--Image Overlay-->
+        <Image x:Name="overlayCamera" Height="209" VerticalAlignment="Center" Stretch="Fill" RenderTransformOrigin="0,0" Margin="125,53,133,188"/>
+        <!--Camera-->
+        <Canvas x:Name="mainCamera" Height="450" VerticalAlignment="Center" RenderTransformOrigin="0,0" Tap="cam_AutoFocus" >
+            <Canvas.Background>
+                <VideoBrush x:Name="mainCameraBrush" Stretch="UniformToFill"/>
+            </Canvas.Background>
+        </Canvas>
+
+        <!--Text Overlay-->
+        <Border x:Name="notifyStatusBackground" Width="269" HorizontalAlignment="Center" Background="White" Margin="192,322,267,79">
+            <TextBlock x:Name="notifyStatus" Text="" Foreground="Black" Margin="0,30,0,25" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="60" FontWeight="ExtraBold" FontFamily="Arial" LineHeight="60"
+Grid.Column="1" />
+        </Border>
+        <TextBlock Text=""
+x:Name="currentStatus"
+Height="49"
+VerticalAlignment="Top"
+HorizontalAlignment="Left"
+Foreground="White"
+FontSize="20"
+Margin="0,30,0,0" Width="125"/>
+        <TextBlock Text=""
+x:Name="currentCount"
+VerticalAlignment="Top"
+HorizontalAlignment="Left"
+Foreground="White"
+FontSize="20"
+Margin="0,84,0,0" Height="71" Width="125"/>
+        <TextBlock Text=""
+x:Name="phoneStatus"
+Height="81"
+VerticalAlignment="Top"
+HorizontalAlignment="Center"
+Foreground="White"
+FontSize="20"
+Margin="10,160,603,0" Width="115"/>
+        <!--Guideline-->
+        <TextBlock Foreground="Turquoise"
+Text="BOX 1"
+Height="25"
+VerticalAlignment="Top"
+HorizontalAlignment="Right"
+FontSize="12"
+Margin="0,0,603,0"/>
+        <Rectangle Fill="Transparent"
+Stroke="Turquoise"
+StrokeThickness="2"
+RenderTransformOrigin="0,0"
+Margin="0,0,600,182"/>
+        <TextBlock Foreground="Turquoise"
+Text="BOX 2"
+Height="69"
+VerticalAlignment="Top"
+HorizontalAlignment="Right"
+FontSize="12"
+Margin="0,10,85,0" Width="97"/>
+        <Rectangle Fill="Transparent"
+Stroke="Turquoise"
+StrokeThickness="2"
+RenderTransformOrigin="0,0"
+Margin="600,0,0,182"/>
+        <TextBlock Foreground="#79B64F"
+Text="OTHER LEAVES SIGNAL BELOW THIS LINE"
+Height="25"
+VerticalAlignment="Top"
+HorizontalAlignment="Center"
+FontSize="25"
+Margin="0,267,0,0"/>
+        <Rectangle Fill="#79B64F" 
+Height="2"
+Stroke="Transparent"
+Canvas.Top="270"
+Margin="0,268,0,180"/>
+        <TextBlock Foreground="#79B64F"
+Text="PLANT STEM BELOW THIS LINE"
+Height="25"
+VerticalAlignment="Top"
+HorizontalAlignment="Center"
+FontSize="25"
+Margin="0,419,0,0"/>
+        <Rectangle Fill="#79B64F"
+Height="2"
+Stroke="Transparent"
+Canvas.Top="400"
+Margin="0,420,0,28"/>
+    </Grid>
+
+    <!--Application Bar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar Opacity="0.0"
+IsVisible="True"
+IsMenuEnabled="True">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Click="About_Clicked"
+Text="about"/>
+                <shell:ApplicationBarMenuItem Click="Detection_Clicked" Text="start" IsEnabled="False"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>

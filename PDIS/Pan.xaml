@@ -1,0 +1,42 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="PDIS.Pan"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <phone:Panorama Title="PDIS" >
+
+            <!--Panorama item one-->
+            <phone:PanoramaItem Header="Prevention">
+
+
+                <ScrollViewer  Foreground="yellow" HorizontalAlignment="Left" Height="520" Margin="-12,-39,0,0" VerticalAlignment="Top" Width="430" Content="• Through using farming methods like crop&#xA;  rotation.&#xA; &#xA;• Plant disease-resistant hybrids to strengthen&#xA;  your plant's chances of being blight free.&#xA;&#xA; • Give tomato plants extra space of more than &#xA; 24 inches to let air move among leaves and&#xA;  keep them dry.&#xA; 
+&#xA;• Water the soil not the plants to prevent&#xA;  splashing hence farmers should avoid&#xA;  overhead watering.&#xA;&#xA;• Mulch with black plastic or landscape fabric&#xA;  to prevent fungus from spreading unto leaves.&#xA; &#xA;• Remove and destroy infected plants at the end&#xA;  of the season.
+" />
+            </phone:PanoramaItem>
+
+            <!--Panorama item two-->
+            <phone:PanoramaItem Header="Treatment">
+                <ScrollViewer Foreground="#79B64F" HorizontalAlignment="Left" Height="516" Margin="6,-37,0,0" VerticalAlignment="Top" Width="412" Content="The disease can be treated with copper spray.&#xA;You can apply until the leaves are dipping,&#xA; once a week and after each rain.&#xA;It should be noted that when blight is present&#xA;and in progress, it becomes more resistant&#xA;to bio fungicides and fungicides, it should be&#xA;treated as soon as possible and on schedule.&#xA;It can also be treated organically with a bio&#xA;  fungicide like Serenade to lessen symptoms.&#xA; Follow label instructions or you can also&#xA;apply a fungicide such as &#xA; chlorothalonil (fungonil), Mancozeb fungicide&#xA;or Daconil at first sign of blight when fruits set&#xA; (as a preventive measure) or when conditions&#xA;indicate a potential for it to develop.&#xA; Follow label directions. Re-apply ever&#xA;  7-10 days or after rain.
+" />
+            </phone:PanoramaItem>
+        </phone:Panorama>
+    </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" BackgroundColor="#79B64F">
+            <shell:ApplicationBarIconButton IconUri="/Icons/back.png" Text="Back" Click="ApplicationBarIconButton_Click" />
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>
